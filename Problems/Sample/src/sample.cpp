@@ -3,6 +3,5 @@
 
 int Sample::AddNumbers(int lhs, int rhs)
 {
-  // Your code goes here !!!
-  return 0;
+  return lhs+rhs;
 }
