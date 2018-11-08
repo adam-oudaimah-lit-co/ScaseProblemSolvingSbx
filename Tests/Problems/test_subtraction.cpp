@@ -11,6 +11,7 @@ TEST(Subtraction, Subtraction)
   {
     FAIL() << "Error opening test file";
   }
+  double maxTestDuration = 0.0; //The duration of the maximum test of the test case
   int numberOfTestCases;
   inf >> numberOfTestCases;
   for (int i = 0; i < numberOfTestCases; i++)
@@ -26,6 +27,15 @@ TEST(Subtraction, Subtraction)
     }
     int expectedAnswer;
     outf >> expectedAnswer;
+	
+	clock_t begin = clock();
+	
     EXPECT_EQ(Subtraction::GetMaxNumber(sequence), expectedAnswer);
+	
+	clock_t end = clock();
+	
+	double testDuration = (double)(begin -end) / CLOCKS_PER_SEC * 1000;
+	
+	maxTestDuration = std::max(testDuration, maxTestDuration);
   }
 }
