@@ -34,8 +34,11 @@ TEST(Subtraction, Subtraction)
 	
 	clock_t end = clock();
 	
-	double testDuration = (double)(begin -end) / CLOCKS_PER_SEC * 1000;
-	
+	double testDuration = (double)(end - begin);
+
 	maxTestDuration = std::max(testDuration, maxTestDuration);
   }
+  std::cout << "The max test duration (in ms) was: ";
+  std::cout << maxTestDuration;
+  std::cout << "\n";
 }
